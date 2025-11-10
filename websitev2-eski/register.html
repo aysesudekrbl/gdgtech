@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clothes and Wardrobe Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Clothes and Wardrobe Assistant">
+    <meta name="keywords" content="clothes, wardrobe, assistant">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <video class="loginvideo" src="./loginvideo.mp4" muted autoplay loop></video>
+        
+        <section class="registerrect">
+            <form class="loginorregister" action="wardrobe.html"> 
+                <h1>New member!</h1>
+                
+                <div class="column">
+                    <label for="name">First Name:</label>
+                    <input id="name" type="text" maxlength="12" required placeholder="Enter your first name">
+                </div>
+
+                <div class="column">
+                    <label for="lastname">Last Name:</label>
+                    <input id="lastname" type="text" maxlength="12" required placeholder="Enter your last name">
+                </div>
+                
+                <div class="column">
+                    <label for="email">Email:    </label>
+                    <input id="email" type="email" required placeholder="myemail@mail.com">
+                </div>
+
+                <div class="column">
+                    <label for="password">Password:   </label>
+                    <input id="password" type="password" maxlength="12" required placeholder="Create a password.">
+                </div>
+                
+                <div>
+                    <label>
+                        <input type="checkbox"> Email me with news and updates. 
+                    </label>
+                </div>
+                
+                <p>By signing up you agree to our <a href="termsofservice.html">Terms of Service</a> and <a href="privacypolicy.html">Privacy Policy</a>.</p>
+                <p>Already have an account?<a href="index.html"> Sign in</a></p>
+                <input type="submit" value="Register">
+            </form> 
+        </section>
+        </main>
+</body>
+</html>
