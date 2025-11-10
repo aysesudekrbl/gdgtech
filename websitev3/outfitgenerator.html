@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clothes and Wardrobe Assistant</title>
+    <link rel="stylesheet" href="css/mainmenustyles.css">
+    <script src="https://kit.fontawesome.com/b88884180e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+        
+        <nav>
+            <ul>
+                <li><a href="wardrobe.html">Wardrobe Gallery</a></li>
+                <li class="active"><a href="outfitgenerator.html">Outfit Generator</a></li>
+                <p class = "title">Clothes and Wardrobe Assistant</p>
+            </ul>
+        </nav>
+
+    <main>
+        <h1>Random Outfit Generator</h1>
+
+        <div class = "seperate_generators">
+        <span>
+        <img id="tshirtphoto">
+        <br>
+        <button type = "button" onclick = "get_random_tshirt()"><i class = "fa-solid fa-shuffle"></i></button>
+        </span>
+
+        <span>
+        <img id="jacketphoto">
+        <br>
+        <button type = "button" onclick = "get_random_jacket()"><i class = "fa-solid fa-shuffle"></i></button>
+        </span>
+
+        <span>
+        <img id="trousersphoto">
+        <br>
+        <button type = "button" onclick = "get_random_trousers()"><i class = "fa-solid fa-shuffle"></i></button>
+        </span>
+
+        <span>
+        <img id="shoesphoto">
+        <br>
+        <button type = "button" onclick = "get_random_shoes()"><i class = "fa-solid fa-shuffle"></i></button>
+        </span>
+        </div>
+
+        <div class = "button_container">
+            <label>Shuffle All</label>
+            <button type = "button" onclick = "randomize_all()"><i class = "fa-solid fa-shuffle"></i></button>
+        </div>
+
+
+
+
+        <script src = "js/randomizer.js"></script>
+        <script>
+       
+        get_random_tshirt();
+        get_random_jacket();
+        get_random_trousers();
+        get_random_shoes();
+
+
+        </script>
+
+    </main>
+
+</body>
+</html>
