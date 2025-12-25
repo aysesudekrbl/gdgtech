@@ -4,7 +4,7 @@
 <head>
         <link rel="icon" href="/favicon.ico" />
         <title>Wardrobe assistant</title>
-        <link rel="stylesheet" href="/src/public/css/styles.css">
+        <link rel="stylesheet" href="/css/styles.css">
         <script src="https://kit.fontawesome.com/b88884180e.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
         
@@ -19,13 +19,13 @@
     <main>
         <section class = "container">
             <div class = "loginphoto">
-            <img src="./images/loginphoto.png" width= 95% height="95%" style = "border-radius:20px">
+            <img src="/images/loginphoto.png" width= 95% height="95%" style = "border-radius:20px">
             </div>
             
             <div>
                 <h1> Welcome Back!</h1> 
-                <p style= "font-size: 12px">Don't have an account?  <a href = "signin.ejs">Create an account.</a></p>
-                <form class = "inputs" action="/login" method="POST" >
+                <p style= "font-size: 12px">Don't have an account?  <a href = /users/register>Create an account.</a></p>
+                <form class = "inputs" action="users/index" method="POST" >
                     <div>
                         <input style = "color: white" type="text" id = "username"  class = "inputbox" placeholder = "  Username" required>
                     </div>   
@@ -51,7 +51,7 @@
         </section>
     </main>
 
-    <script src = "js/inputs.js"></script>
+    <script src = "/js/inputs.js"></script>
 
 
 </body>

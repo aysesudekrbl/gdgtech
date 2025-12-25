@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
+app.use(express.static(path.join(__dirname, 'src', 'public')));
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
 
 const PORT = process.env.PORT || 4000
 
@@ -16,8 +16,8 @@ app.get('/users/register',(req,res) => {
   res.render("register")
 });
 
-app.get('/users/login',(req,res) => {
-  res.render("login")
+app.get('/users/index',(req,res) => {
+  res.render("index")
 });
 app.get('/users/dashboard',(req,res) => {
   res.render("wardrobe")

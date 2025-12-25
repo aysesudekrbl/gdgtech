@@ -7,22 +7,22 @@
         <link  rel = "stylesheet" href = "/css/styles.css"></link>
         <script src="https://kit.fontawesome.com/b88884180e.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-        <script src = "js/inputs.js"></script>
+        <script src = "/js/inputs.js"></script>
 </head>
 <body>
     <main>
         <section class = "container">
             <div class = "loginphoto">
-            <img src="./images/loginphoto.png" width= 95% height="95%" style = "border-radius:20px">
+            <img src="/images/loginphoto.png" width= 95% height="95%" style = "border-radius:20px">
 
             </div>
             <div>
                 <h1> Create an Account</h1> 
-                <p style= "font-size: 12px">Already have an account?  <a href = "index.ejs">Log in</a></p>
+                <p style= "font-size: 12px">Already have an account?  <a href = /users/index>Log in</a></p>
                
                
-                <div id = "error"></div>
-                <form class = "inputs" action = "/signup" method = "POST" id = "signupform">
+                
+                <form class = "inputs" action = "users/register" method = "POST" id = "signupform">
 
                     <div class = "username">
                         <input style = "color: white" type="text" id = "username"  class = "inputbox" placeholder = " Username" required>                        

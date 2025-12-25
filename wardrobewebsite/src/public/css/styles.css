@@ -55,14 +55,14 @@ body{
     
 }
 
-.container div{
+.container {
+    display: flex;
+}
+
+.container > div {
     background-color: #2C2638;
-    flex:1;
-    border:12px solid  #110C20;
-    border-top: 24px solid #110C20;
-    border-bottom: 24px solid #110C20;
-    border-right: 24px solid #110C20;
-    border-left: 24px solid #110C20;
+    flex: 1;
+    border: 12px solid #110C20;
     border-radius: 48px;
 }
 
