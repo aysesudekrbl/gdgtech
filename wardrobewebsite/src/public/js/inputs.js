@@ -10,3 +10,4 @@ function passwordfunction(){
         icon.className = "fa-solid fa-eye";
     }
 }
+
