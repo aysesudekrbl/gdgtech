@@ -1,16 +1,24 @@
-const { Pool } = require('pg');
-require('dotenv').config();
+const express = require("express");
+const app = express();
 
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+const PORT = process.env.PORT || 4000
+
+app.set('view engine', "ejs")
+app.get("/",(req,res) =>{
+  res.render('index')
 });
 
-pool.connect()
-  .then(() => console.log('PostgreSQL connected'))
-  .catch(err => console.error('Connection failed:', err.message));
+app.get('users/register',(req,res) => {
+  req.render("register")
+});
 
-module.exports = pool;
+app.get('users/login',(req,res) => {
+  req.render("login")
+});
+app.get('users/dashboard',(req,res) => {
+  req.render("wardrobe")
+});
+
+app.listen(PORT,() => {
+  console.log(`Server running on port ${PORT}`);
+});

@@ -1,22 +1,28 @@
-const result = require('dotenv').config({ debug: true });
-console.log(result.parsed);
-require("./db");
-
 const express = require("express");
-const path = require("path");
-const bodyParser = require("body-parser");
-require("dotenv").config();
-
 const app = express();
-const port = process.env.PORT || 5000;
 
-// Body parsingc
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
-// Static files
-app.use(express.static(path.join(__dirname, "src", "public")));
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+const PORT = process.env.PORT || 4000
+
+app.set('view engine', "ejs")
+app.get("/",(req,res) =>{
+  res.render('index')
+});
+
+app.get('/users/register',(req,res) => {
+  res.render("register")
+});
+
+app.get('/users/login',(req,res) => {
+  res.render("login")
+});
+app.get('/users/dashboard',(req,res) => {
+  res.render("wardrobe")
+});
+
+app.listen(PORT,() => {
+  console.log(`Server running on port ${PORT}`);
 });
