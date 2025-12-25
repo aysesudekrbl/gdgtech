@@ -19,8 +19,12 @@ app.get('/users/register',(req,res) => {
 app.get('/users/index',(req,res) => {
   res.render("index")
 });
-app.get('/users/dashboard',(req,res) => {
+app.get('/users/wardrobe',(req,res) => {
   res.render("wardrobe")
+});
+
+app.get('/users/outfitgenerator',(req,res) => {
+  res.render("outfitgenerator")
 });
 
 app.listen(PORT,() => {
