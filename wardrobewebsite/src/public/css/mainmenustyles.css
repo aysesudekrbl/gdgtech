@@ -110,7 +110,7 @@ align-items: center;
 }
 
 
-#add{
+.add-btn{
   background-color:#3C364C;
   color:white;
   border-radius: 10px;
@@ -119,6 +119,6 @@ align-items: center;
   height: 250px;
 }
 
-#add:hover{
+.add-btn:hover{
     background-color: #6D54B3;
 }
