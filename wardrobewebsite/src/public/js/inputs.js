@@ -1,13 +1,11 @@
-function passwordfunction(){
-    var button = document.getElementById("passwordinput");
-    var icon = document.getElementById("passwordicon")
-    if (button.type === "password"){
-        button.type = "text";
-        icon.className = "fa-solid fa-eye-slash";
-    }
-    else{
-        button.type = "password";
-        icon.className = "fa-solid fa-eye";
+function passwordfunction() {
+    var x = document.getElementById("passwordInput");
+    var icon = document.getElementById("passwordicon");
+    if (x.type === "password") {
+        x.type = "text";
+        icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+        x.type = "password";
+        icon.classList.replace("fa-eye-slash", "fa-eye");
     }
 }
-
