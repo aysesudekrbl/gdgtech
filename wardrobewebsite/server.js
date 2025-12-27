@@ -7,6 +7,19 @@ const bcrypt = require("bcrypt");
 const session = require('express-session');
 const flash = require('express-flash');
 const passport = require('passport');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'src/public/uploads/');
+    },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
 
 const initializePassport = require('./passportConfig')
 initializePassport(passport);
@@ -38,6 +51,7 @@ app.get('/users/register', checkAuthenticated,(req,res) => {
 app.get('/users/index', checkAuthenticated ,(req,res) => {
   res.render("index")
 });
+
 
 app.get('/users/logout', (req, res, next) => {
   req.logout((err) => {
@@ -134,6 +148,24 @@ function checkNotAuthenticated(req,res,next){
   }
   res.redirect('/users/index');
 }
+app.post('/users/upload', checkNotAuthenticated, upload.single('image'), async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const category = req.body.category; // tshirt, jackets vb.
+        const imagePath = `/uploads/${req.file.filename}`;
+
+       
+        await pool.query(
+            `UPDATE images SET ${category} = array_append(${category}, $1) WHERE id = $2`,
+            [imagePath, userId]
+        );
+
+        res.redirect('/users/wardrobe');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Dosya yüklenirken hata oluştu.");
+    }
+});
 
 app.listen(PORT,() => {
   console.log(`Server running on port ${PORT}`);

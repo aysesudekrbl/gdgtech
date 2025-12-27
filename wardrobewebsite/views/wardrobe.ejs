@@ -26,6 +26,17 @@
         <h1>Your Wardrobe</h1>
 <section>
     <h2>T-shirts</h2>
+        <section>
+    <button class="add-btn" id = "add" data-category="tshirts" type="button">
+        <i class="fa-solid fa-plus fa-2xl"></i>
+    </button>
+    </section>
+
+    <form id="uploadForm" action="/users/upload" method="POST" enctype="multipart/form-data" style="display:none;">
+        <input type="file" name="image" id="fileInput" accept="image/*">
+        <input type="text" name="category" id="categoryInput">
+    </form>
+
     <% tshirts.forEach(function(img){ %>
         <figure class="gallery">
             <img src="<%= img %>" alt="T-shirt">
@@ -35,6 +46,17 @@
 
 <section>
     <h2>Jackets</h2>
+    <section>
+    <button id = "add" class="add-btn" data-category="jackets" type="button">
+        <i class="fa-solid fa-plus fa-2xl"></i>
+    </button>
+    </section>
+
+    <form id="uploadForm" action="/users/upload" method="POST" enctype="multipart/form-data" style="display:none;">
+        <input type="file" name="image" id="fileInput" accept="image/*">
+        <input type="text" name="category" id="categoryInput">
+    </form>
+    
     <% jackets.forEach(function(img){ %>
         <figure class="gallery">
             <img src="<%= img %>" alt="Jacket">
@@ -44,6 +66,17 @@
 
 <section>
     <h2>Trousers</h2>
+    <section>
+    <button id = "add" class="add-btn" data-category="trousers" type="button">
+        <i class="fa-solid fa-plus fa-2xl"></i>
+    </button>
+    </section>
+
+    <form id="uploadForm" action="/users/upload" method="POST" enctype="multipart/form-data" style="display:none;">
+        <input type="file" name="image" id="fileInput" accept="image/*">
+        <input type="text" name="category" id="categoryInput">
+    </form>
+
     <% trousers.forEach(function(img){ %>
         <figure class="gallery">
             <img src="<%= img %>" alt="Trousers">
@@ -53,14 +86,26 @@
 
 <section>
     <h2>Shoes</h2>
+    <section>
+    <button id = "add" class="add-btn" data-category="shoes" type="button">
+        <i class="fa-solid fa-plus fa-2xl"></i>
+    </button>
+    </section>
+
+    <form id="uploadForm" action="/users/upload" method="POST" enctype="multipart/form-data" style="display:none;">
+        <input type="file" name="image" id="fileInput" accept="image/*">
+        <input type="text" name="category" id="categoryInput">
+    </form>
+
+    <input type="file" id="fileInput" accept="image/*" style="display: none;">
     <% shoes.forEach(function(img){ %>
         <figure class="gallery">
             <img src="<%= img %>" alt="Shoes">
         </figure>
     <% }); %>
 </section>
-
-        
+  
     </main>
+    <script src="/js/imageInput.js"></script>
 </body>
 </html>

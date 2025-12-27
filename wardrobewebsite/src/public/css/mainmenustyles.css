@@ -108,3 +108,17 @@ gap:4px;
 justify-content: center;
 align-items: center;
 }
+
+
+#add{
+  background-color:#3C364C;
+  color:white;
+  border-radius: 10px;
+  border: 2px solid #3C364C;
+  width: 250px;
+  height: 250px;
+}
+
+#add:hover{
+    background-color: #6D54B3;
+}
