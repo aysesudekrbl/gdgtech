@@ -1,56 +1,27 @@
-tshirts_array = [
-    "1.webp",
-    "2.webp",
-    "3.webp",
-    "4.jpg"
-
-]
-    
-
-jackets_array = [
-    "1.webp",
-    "2.webp",
-    "3.jpg"
-]
-
-trousers_array = [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg"
-]
-
-shoes_array = [
-    "1.webp",
-    "2.webp",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg"
-]
-
-
 function get_random_tshirt(){
-    random_index = Math.floor(Math.random() * tshirts_array.length);
-    selected_tshirt = tshirts_array[random_index]
-    document.getElementById("tshirtphoto").src = `/images/tshirts/${selected_tshirt}`
+    const arr = tshirts_array || [];
+    if (arr.length === 0) return;
+    const random_index = Math.floor(Math.random() * arr.length);
+    // Zaten "/images/tshirts/1.webp" geldiği için sadece dizideki elemanı atıyoruz
+    document.getElementById("tshirtphoto").src = arr[random_index];
 }
 
-
 function get_random_jacket(){
-    random_index = Math.floor(Math.random() * jackets_array.length);
-    selected_jacket = jackets_array[random_index]
-    document.getElementById("jacketphoto").src = `/images/jackets/${selected_jacket}`
+    if (jackets_array.length === 0) return;
+    const random_index = Math.floor(Math.random() * jackets_array.length);
+    document.getElementById("jacketphoto").src = jackets_array[random_index];
 }
 
 function get_random_trousers(){
-    random_index = Math.floor(Math.random() * trousers_array.length);
-    selected_trousers = trousers_array[random_index]
-    document.getElementById("trousersphoto").src = `/images/trousers/${selected_trousers}`
+    if (trousers_array.length === 0) return;
+    const random_index = Math.floor(Math.random() * trousers_array.length);
+    document.getElementById("trousersphoto").src = trousers_array[random_index];
 }
 
 function get_random_shoes(){
-    random_index = Math.floor(Math.random() * shoes_array.length);
-    selected_shoes = shoes_array[random_index]
-    document.getElementById("shoesphoto").src = `/images/shoes/${selected_shoes}`
+    if (shoes_array.length === 0) return;
+    const random_index = Math.floor(Math.random() * shoes_array.length);
+    document.getElementById("shoesphoto").src = shoes_array[random_index];
 }
 
 function randomize_all(){

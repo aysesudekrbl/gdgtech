@@ -23,14 +23,25 @@
             </div>
             
             <div>
+            </ul>
                 <h1> Welcome Back!</h1> 
+
+                <ul>
+                <% if (messages.success_msg) { %>
+                    <li><%= messages.success_msg %></li>
+                <% } %>
+                <% if (messages.error) { %>
+                    <li><%= messages.error %></li>
+                <% } %>
+                </ul>
+                
                 <p style= "font-size: 12px">Don't have an account?  <a href = /users/register>Create an account.</a></p>
-                <form class = "inputs" action="users/index" method="POST" >
+                <form class = "inputs" action="/users/index" method="POST" >
                     <div>
-                        <input style = "color: white" type="text" id = "username"  class = "inputbox" placeholder = "  Username" required>
+                        <input style = "color: white" type="email" name = "email"  class = "inputbox" placeholder = " Email" required>
                     </div>   
                     <div class = "passwordcontainer">
-                        <input style = "color: white" type="password" id = "passwordinput" class = "inputbox" placeholder="  Password" required>
+                        <input style = "color: white" type="password" name = "password" class = "inputbox" placeholder="  Password" required>
                         <button type = "button" onclick = "passwordfunction()"><i id = "passwordicon" class = "fa-solid fa-eye"></i></button>
                     </div>
                     <div class = "buttons">

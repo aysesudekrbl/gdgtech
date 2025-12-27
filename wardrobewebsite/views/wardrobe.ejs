@@ -11,88 +11,56 @@
 </head>
 <body>
     <header>
+        
         <nav>
             <ul>
                 <li class="active"><a href=/users/wardrobe>Wardrobe Gallery</a></li>
                 <li><a href=/users/outfitgenerator>Outfit Generator</a></li>
-                <p class = "title">Clothes and Wardrobe Assistant</p>
+                <li>  <a href = "/users/logout" > Log out</a> </li>
+                <p class = "title">Hello <%= user %>!</p> 
             </ul>
         </nav>
     </header>
-
+                
     <main>
         <h1>Your Wardrobe</h1>
+<section>
+    <h2>T-shirts</h2>
+    <% tshirts.forEach(function(img){ %>
+        <figure class="gallery">
+            <img src="<%= img %>" alt="T-shirt">
+        </figure>
+    <% }); %>
+</section>
 
-        <section>
-            <h2>T-shirts</h2>
-            <figure class="gallery">
-                <img src="/images/tshirts/1.webp" alt="Gray T-shirt">
-            </figure>
+<section>
+    <h2>Jackets</h2>
+    <% jackets.forEach(function(img){ %>
+        <figure class="gallery">
+            <img src="<%= img %>" alt="Jacket">
+        </figure>
+    <% }); %>
+</section>
 
-            <figure class="gallery">
-                <img src="/images/tshirts/2.webp" alt="Black T-Shirt">
-            </figure>
-            <figure class="gallery">
-                <img src="/images/tshirts/3.webp"  alt="White T-shirt">
-            </figure>
+<section>
+    <h2>Trousers</h2>
+    <% trousers.forEach(function(img){ %>
+        <figure class="gallery">
+            <img src="<%= img %>" alt="Trousers">
+        </figure>
+    <% }); %>
+</section>
 
-            <figure class="gallery">
-                <img src="/images/tshirts/4.jpg"  alt="White T-shirt">
-            </figure>
+<section>
+    <h2>Shoes</h2>
+    <% shoes.forEach(function(img){ %>
+        <figure class="gallery">
+            <img src="<%= img %>" alt="Shoes">
+        </figure>
+    <% }); %>
+</section>
 
-        </section>
         
-        <section>
-            <h2>Jackets</h2>
-            <figure class="gallery">
-                <img src="/images/jackets/1.webp" alt="Yellow jacket">
-            </figure>
-
-            <figure class="gallery">
-                <img src="/images/jackets/2.webp"  alt="Leather jacket">
-            </figure>
-            <figure class="gallery">
-                <img src="/images/jackets/3.jpg" alt="Brown jacket">
-            </figure>
-        </section>
-
-        <section>
-            <h2>Trousers</h2>
-            <figure class="gallery">
-                <img src="/images/trousers/1.jpg"  alt="Gray Trousers">
-            </figure>
-
-            <figure class="gallery">
-                <img src="/images/trousers/2.jpg"  alt="Black Trousers">
-            </figure>
-            <figure class="gallery">
-                <img src="/images/trousers/3.jpg"  alt="Blue Jeans">
-
-            </figure>
-        </section>
-
-        <section>
-            <h2>Shoes</h2>
-            <figure class="gallery">
-                <img src="/images/shoes/1.webp" alt="Black shoe">
-            </figure>
-
-            <figure class="gallery">
-                <img src="/images/shoes/2.webp"  alt="Gray shoe">
-            </figure>
-            <figure class="gallery">
-                <img src="/images/shoes/3.jpg"  alt="Blue shoe">
-            </figure>
-
-            <figure class="gallery">
-                <img src="/images/shoes/4.jpg"  alt="Blue shoe">
-            </figure>
-
-            <figure class="gallery">
-                <img src="/images/shoes/5.jpg"  alt="Blue shoe">
-            </figure>
-        </section>
-
     </main>
 </body>
 </html>

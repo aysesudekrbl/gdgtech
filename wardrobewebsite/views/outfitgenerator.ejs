@@ -14,7 +14,8 @@
             <ul>
                 <li><a href=/users/wardrobe>Wardrobe Gallery</a></li>
                 <li class="active"><a href=/users/outfitgenerator>Outfit Generator</a></li>
-                <p class = "title">Clothes and Wardrobe Assistant</p>
+                <li>  <a href = "/users/logout" > Log out</a> </li>
+                <p class = "title">Hello <%= user %>!</p> 
             </ul>
         </nav>
 
@@ -55,17 +56,20 @@
 
 
 
-        <script src = "/js/randomizer.js"></script>
-        <script>
-       
-        get_random_tshirt();
-        get_random_jacket();
-        get_random_trousers();
-        get_random_shoes();
 
-
-        </script>
-
+<script>
+    const tshirts_array = <%- JSON.stringify(tshirts) %>;
+    const jackets_array = <%- JSON.stringify(jackets) %>;
+    const trousers_array = <%- JSON.stringify(trousers) %>;
+    const shoes_array = <%- JSON.stringify(shoes) %>;
+</script>
+<script src="/js/randomizer.js"></script>
+<script src="/js/randomizer.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        randomize_all();
+    });
+</script>
     </main>
 
 </body>
